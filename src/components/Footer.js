@@ -1,173 +1,156 @@
+import { useMemo, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const Footer = ({ className = "" }) => {
+const FrameComponent = ({
+  className = "",
+  fLEXFITRemovebgPreview1,
+  propBackgroundColor,
+}) => {
+  const frameFooterStyle = useMemo(() => {
+    return {
+      backgroundColor: propBackgroundColor,
+    };
+  }, [propBackgroundColor]);
+
+  const navigate = useNavigate();
+
+  const onFLEXFITRemovebgPreview1ImageClick = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
+
   return (
-    <div
-      className={`absolute top-[0px] left-[0px] w-[270px] flex flex-col items-start justify-start pt-[13px] px-0 pb-[190px] box-border gap-[22px] text-left text-sm-5 text-darkslategray-1100 font-inter ${className}`}
+    <footer
+      className={`self-stretch flex flex-row items-start justify-center max-w-full shrink-0 text-left text-mini text-dimgray-1800 font-montserrat ${className}`}
+      style={frameFooterStyle}
     >
-      <img
-        className="w-full h-full absolute !m-[0] right-[0px] bottom-[-3px] left-[0px] max-w-full overflow-hidden shrink-0 z-[1]"
-        alt=""
-        src="/background-1.svg"
-      />
-      <div className="self-stretch flex flex-row items-start justify-start py-0 pr-1 pl-[13px] text-20xl">
-        <div className="flex-1 flex flex-row items-start justify-start gap-[21px]">
-          <div className="flex-1 flex flex-col items-start justify-start gap-[10px]">
-            <div className="self-stretch flex flex-row items-start justify-start py-0 pr-[13px] pl-2.5">
-              <div className="flex-1 flex flex-row items-end justify-start gap-[11.5px]">
-                <img
-                  className="h-[5px] w-[78px] relative object-cover z-[2]"
-                  loading="lazy"
-                  alt=""
-                  src="/image-25@2x.png"
-                />
-                <div className="flex flex-col items-start justify-end pt-0 px-0 pb-px">
+      <div className="w-[1240px] flex flex-row items-start justify-start py-[100px] px-[25px] box-border max-w-[1240px] mq750:pt-[65px] mq750:pb-[65px] mq750:box-border mq1250:max-w-full">
+        <div className="flex-1 flex flex-row items-start justify-start pt-0 px-0 pb-[18.3px] box-border gap-[309.9px] min-h-[271.31px] max-w-full shrink-0 mq750:gap-[77px] mq450:gap-[39px] mq1050:flex-wrap mq1050:gap-[155px]">
+          <div className="mt-[-7.9px] flex flex-col items-start justify-start gap-[13px] min-w-[396px] max-w-full mq750:min-w-full mq1050:flex-1">
+            <img
+              className="w-[123px] h-[72px] relative object-contain cursor-pointer"
+              loading="lazy"
+              alt=""
+              src={fLEXFITRemovebgPreview1}
+              onClick={onFLEXFITRemovebgPreview1ImageClick}
+            />
+            <div className="flex flex-col items-start justify-start gap-[20.2px]">
+              <div className="relative leading-[22.5px] font-medium">
+                <p className="m-0">
+                  Take your health and body to the next level with our
+                </p>
+                <p className="m-0">
+                  comprehensive program designed to help you
+                </p>
+                <p className="m-0">reach your fitness goals.</p>
+              </div>
+              <div className="flex flex-row items-start justify-start gap-[17.5px]">
+                <div className="h-[38px] w-[38px] rounded-9980xl bg-whitesmoke-700 flex flex-col items-start justify-start">
                   <img
-                    className="w-7 h-[34px] relative object-cover z-[2]"
-                    loading="lazy"
+                    className="w-[38px] h-[38px] relative"
                     alt=""
-                    src="/image-26@2x.png"
+                    src="/frame-1.svg"
                   />
                 </div>
-                <img
-                  className="h-[5px] w-[79px] relative object-cover z-[2]"
-                  loading="lazy"
-                  alt=""
-                  src="/image-27@2x.png"
-                />
-              </div>
-            </div>
-            <h2 className="m-0 self-stretch relative text-inherit font-normal font-inherit z-[2] mq450:text-4xl mq975:text-12xl">
-              Pocket Gym
-            </h2>
-          </div>
-          <div className="flex flex-col items-start justify-start pt-3 px-0 pb-0">
-            <div className="w-px h-11 relative bg-whitesmoke-200 z-[2]" />
-          </div>
-        </div>
-      </div>
-      <div className="w-[254px] flex flex-row items-start justify-start pt-0 px-[9px] pb-[31px] box-border text-dimgray-1700">
-        <div className="flex-1 rounded-[9.75px] bg-whitesmoke-800 flex flex-row items-end justify-start pt-3.5 px-[17px] pb-[18px] gap-[13px] z-[2]">
-          <div className="h-[74px] w-[236px] relative rounded-[9.75px] bg-whitesmoke-800 hidden" />
-          <img
-            className="h-[42px] w-[45px] relative object-contain min-h-[42px] z-[3]"
-            loading="lazy"
-            alt=""
-            src="/image-28@2x.png"
-          />
-          <div className="w-[123px] flex flex-col items-start justify-start gap-[5px]">
-            <a className="[text-decoration:none] w-[46px] relative text-[inherit] flex items-center z-[3]">
-              admin
-            </a>
-            <div className="self-stretch relative text-smi-5 text-lightslategray-400 whitespace-nowrap z-[3]">
-              admin@gmail.com
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="self-stretch flex flex-col items-start justify-start py-0 pr-0.5 pl-0 gap-[33.7px] text-darkgray-200">
-        <div className="self-stretch flex flex-col items-start justify-start gap-[11.5px]">
-          <div className="flex flex-row items-start justify-start py-0 px-[30px]">
-            <div className="flex flex-row items-start justify-start gap-[17px]">
-              <div className="flex flex-col items-start justify-start pt-px px-0 pb-0">
-                <img
-                  className="w-[19px] h-[19px] relative object-cover z-[2]"
-                  loading="lazy"
-                  alt=""
-                  src="/image-29@2x.png"
-                />
-              </div>
-              <a className="[text-decoration:none] relative text-[inherit] inline-block min-w-[74px] z-[2]">
-                Dashboard
-              </a>
-            </div>
-          </div>
-          <div className="self-stretch flex flex-row items-start justify-start py-[17px] px-[30px] gap-[17px] bg-[url('/public/background@2x.png')] bg-cover bg-no-repeat bg-[top] z-[2] text-mediumseagreen-200">
-            <img
-              className="h-12 w-[266px] relative object-cover hidden"
-              alt=""
-              src="/background@2x.png"
-            />
-            <div className="flex flex-col items-start justify-start pt-px px-0 pb-0">
-              <img
-                className="w-[19px] h-[18px] relative object-cover z-[1]"
-                loading="lazy"
-                alt=""
-                src="/image-30@2x.png"
-              />
-            </div>
-            <a className="[text-decoration:none] relative text-[inherit] inline-block min-w-[67px] z-[1]">
-              Members
-            </a>
-          </div>
-          <div className="flex flex-row items-start justify-start py-0 px-[29px] text-darkgray-300">
-            <div className="flex flex-row items-end justify-start gap-[15px]">
-              <div className="flex flex-col items-start justify-end pt-0 px-0 pb-0.5">
-                <img
-                  className="w-[21px] h-[13px] relative object-cover z-[2]"
-                  loading="lazy"
-                  alt=""
-                  src="/image-31@2x.png"
-                />
-              </div>
-              <div className="relative inline-block min-w-[59px] z-[2]">
-                Trainers
+                <div className="h-[38px] w-[38px] rounded-9980xl bg-whitesmoke-700 flex flex-col items-start justify-start">
+                  <img
+                    className="w-[38px] h-[38px] relative"
+                    alt=""
+                    src="/frame-2.svg"
+                  />
+                </div>
+                <div className="h-[38px] w-[37.4px] rounded-9980xl bg-whitesmoke-700 flex flex-col items-start justify-start">
+                  <img
+                    className="w-[37.4px] h-[38px] relative"
+                    alt=""
+                    src="/frame-3.svg"
+                  />
+                </div>
+                <div className="h-[38px] w-[40.3px] rounded-9980xl bg-whitesmoke-700 flex flex-col items-start justify-start">
+                  <img
+                    className="w-[40.3px] h-[38px] relative"
+                    alt=""
+                    src="/frame-4.svg"
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="flex flex-row items-start justify-start py-0 px-[31px] text-smi-5 text-lightslategray-300">
-          <div className="flex flex-row items-start justify-start gap-[18px]">
-            <img
-              className="h-[19px] w-[17px] relative object-cover z-[2]"
-              loading="lazy"
-              alt=""
-              src="/image-32@2x.png"
-            />
-            <div className="flex flex-col items-start justify-start pt-px px-0 pb-0">
-              <div className="relative inline-block min-w-[59px] z-[2]">
-                Calendar
+          <div className="w-[329px] flex flex-row items-start justify-start min-w-[329px] [row-gap:20px] max-w-full text-base mq450:flex-wrap mq1050:flex-1">
+            <div className="flex flex-col items-start justify-start gap-[16px] min-w-[154px] mq450:flex-1">
+              <div className="flex flex-col items-start justify-start text-3xl text-black1">
+                <h3 className="m-0 relative text-inherit leading-[33px] font-bold font-inherit mq450:text-lg mq450:leading-[26px]">
+                  Our Classes
+                </h3>
+                <div className="w-[70px] h-1 relative bg-crimson-100 z-[1]" />
+              </div>
+              <div className="flex flex-row items-start justify-start pt-0 px-0 pb-1">
+                <div className="relative leading-[24px] font-medium inline-block min-w-[122px]">
+                  Fitness Classes
+                </div>
+              </div>
+              <div className="flex flex-row items-start justify-start pt-0 px-0 pb-1">
+                <div className="relative leading-[24px] font-medium">
+                  Aerobics Classes
+                </div>
+              </div>
+              <div className="flex flex-row items-start justify-start pt-0 px-0 pb-1">
+                <div className="relative leading-[24px] font-medium inline-block min-w-[97px]">
+                  Power Yoga
+                </div>
+              </div>
+              <div className="flex flex-row items-start justify-start pt-0 px-0 pb-1">
+                <div className="relative leading-[24px] font-medium inline-block min-w-[129px]">
+                  Learn Machines
+                </div>
+              </div>
+              <div className="relative leading-[24px] font-medium">
+                Full-body Strength
               </div>
             </div>
-          </div>
-        </div>
-        <div className="flex flex-row items-start justify-start py-0 px-[30px] text-smi-5 text-darkgray-1300">
-          <div className="flex flex-row items-start justify-start gap-[16px]">
-            <img
-              className="h-5 w-5 relative object-cover min-h-[20px] z-[2]"
-              loading="lazy"
-              alt=""
-              src="/image-33@2x.png"
-            />
-            <div className="flex flex-col items-start justify-start pt-px px-0 pb-0">
-              <div className="relative inline-block min-w-[70px] z-[2]">
-                SportType
+            <div className="flex-1 flex flex-col items-start justify-start gap-[16px] min-w-[114px]">
+              <div className="flex flex-col items-start justify-start text-3xl text-black1">
+                <h3 className="m-0 relative text-inherit leading-[33px] font-bold font-inherit mq450:text-lg mq450:leading-[26px]">
+                  Working Hours
+                </h3>
+                <div className="w-[70px] h-1 relative bg-crimson-100 z-[1]" />
               </div>
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-row items-start justify-start py-0 px-7 text-darkgray-1700">
-          <div className="flex flex-row items-start justify-start gap-[15px]">
-            <div className="flex flex-col items-start justify-start pt-0.5 px-0 pb-0">
-              <img
-                className="w-[23px] h-[17px] relative object-cover z-[2]"
-                loading="lazy"
-                alt=""
-                src="/image-34@2x.png"
-              />
-            </div>
-            <div className="relative inline-block min-w-[62px] z-[2]">
-              Payment
+              <div className="self-stretch flex flex-col items-start justify-start pt-0 px-0 pb-1">
+                <b className="self-stretch relative leading-[24px]">
+                  Monday - Friday:
+                </b>
+                <div className="self-stretch relative leading-[24px] font-medium whitespace-nowrap z-[1]">
+                  7:00am - 21:00pm
+                </div>
+              </div>
+              <div className="self-stretch flex flex-col items-start justify-start pt-0 px-0 pb-1">
+                <b className="self-stretch relative leading-[24px]">
+                  Saturday:
+                </b>
+                <div className="self-stretch relative leading-[24px] font-medium whitespace-nowrap z-[1]">
+                  7:00am - 19:00pm
+                </div>
+              </div>
+              <div className="self-stretch flex flex-col items-start justify-start">
+                <b className="self-stretch relative leading-[24px]">Sunday:</b>
+                <div className="self-stretch relative leading-[24px] font-medium z-[1]">
+                  Closed
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
-Footer.propTypes = {
+FrameComponent.propTypes = {
   className: PropTypes.string,
+  fLEXFITRemovebgPreview1: PropTypes.string,
+
+  /** Style props */
+  propBackgroundColor: PropTypes.any,
 };
 
-export default Footer;
+export default FrameComponent;
