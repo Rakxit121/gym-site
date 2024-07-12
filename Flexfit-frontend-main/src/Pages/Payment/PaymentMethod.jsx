@@ -1,27 +1,18 @@
 import React, { useState } from 'react';
-// import axios from 'axios';
 import Footer from "../../components/Footer/Footer";
 import './PaymentMethod.css';
+import Popup from './Popup.css';
 
 const PaymentMethod = () => {
     const [contact, setContact] = useState('jhonsmith93@gmail.com');
     const [paymentMethod, setPaymentMethod] = useState('');
     const [membershipType, setMembershipType] = useState('annually');
     const [addons, setAddons] = useState(false);
+    const [showPopup, setShowPopup] = useState(false);
 
     const handlePayment = async () => {
-        const data = {
-            contact,
-            paymentMethod,
-            membershipType,
-            addons
-        };
-        // try {
-        //     const response = await axios.post('/api/payment', data);
-        //     console.log(response.data);
-        // } catch (error) {
-        //     console.error('There was an error processing the payment!', error);
-        // }
+        setShowPopup(true);
+        // The rest of the payment logic
     };
 
     return (
@@ -132,14 +123,9 @@ const PaymentMethod = () => {
                     </div>
                 </div>
             </section>
-            <section className="trainer-contact">
-                <div className="container">
-                    <h2>Need a Fitness Trainer?</h2>
-                    <p>Call us: +123-456789</p>
-                    <button>Purchase Now</button>
-                </div>
-            </section>
+
             <Footer />
+            {showPopup && <Popup setShowPopup={setShowPopup} />}
         </div>
     );
 };
