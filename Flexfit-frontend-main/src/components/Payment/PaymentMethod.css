@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.join-class a {
+  background-color: #ff0000;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.banner {
+  background: url('') no-repeat center center/cover;
+  padding: 100px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.payment-method {
+  background-color: #fff;
+  padding: 50px 0;
+}
+
+.payment-method h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.payment-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.payment-form,
+.membership-info {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  width: 48%;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.contact-info input {
+  border: none;
+  background: none;
+  font-size: 16px;
+  width: 70%;
+}
+
+.contact-info button {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.payment-options .option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.payment-options label {
+  margin-left: 10px;
+}
+
+.card-details input {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.pay-button {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.membership-info h3,
+.membership-info p {
+  margin-bottom: 10px;
+}
+
+.membership-type,
+.add-ons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.membership-type label,
+.add-ons label {
+  cursor: pointer;
+}
+
+.terms {
+  font-size: 12px;
+}
+
+.terms a {
+  color: #000;
+}
+
+.total {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.trainer-contact {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.trainer-contact button {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 50px 0;
+}
+
+.footer-logo img {
+  width: 50px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.social-links a {
+  margin-right: 10px;
+}
+
+.social-links img {
+  width: 20px;
+}
