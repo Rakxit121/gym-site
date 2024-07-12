@@ -1,4 +1,4 @@
-<div align='center'><img src='Flexfit-frontend-main\public\favicon-16x16.png'/></div>
+<div align='center'><img src='public/Flexfit-frontend-main\public\favicon-16x16.png'/></div>
 
 <h2>About the project</h2>
 

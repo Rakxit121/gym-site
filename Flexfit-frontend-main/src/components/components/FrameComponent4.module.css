@@ -260,7 +260,7 @@
   flex-direction: row;
   align-items: flex-end;
   padding: var(--padding-6xl) var(--padding-614xl);
-  background-image: url(/public/background1@3x.png);
+  background-image: url(/public/images_extra/background1@3x.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;

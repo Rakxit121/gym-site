@@ -5,6 +5,7 @@ import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
 
 import { Route, Routes } from "react-router-dom";
+import InstructorProfile from "./components/Trainers/InstructorProfile";
 import { AuthContextProvider } from "./context/AuthContext";
 import About from "./Pages/About";
 import Blog from "./Pages/Blog";
@@ -12,8 +13,7 @@ import Classes from "./Pages/Classes";
 import Gallery from "./Pages/Gallery/Gallery";
 import GalleryPage1 from "./Pages/Gallery/GalleryPage1";
 import GalleryPage2 from "./Pages/Gallery/GalleryPage2";
-import InstructorProfile from "./Pages/InstructorProfile";
-import PaymentMethod from "./Pages/PaymentMethod";
+import PaymentMethod from "./components/Payment/PaymentMethod";
 import Price from "./Pages/Price";
 import Friday from "./Pages/Schedule/Friday";
 import Monday from "./Pages/Schedule/Monday";
@@ -57,15 +57,7 @@ function App() {
             <Route path="page-2" element={<GalleryPage2 />} />
           </Route>
 
-          <Route path="admin" element={<Admin />}>
-            {/* Admin routes */}
-            <Route path="dashboard" element={<h1>Admin Dashboard</h1>} />
-            <Route path="classes" element={<h1>Admin Classes</h1>} />
-            <Route path="blog" element={<h1>Admin Blog</h1>} />
-            <Route path="schedule" element={<h1>Admin Schedule</h1>} />
-            <Route path="gallery" element={<h1>Admin Gallery</h1>} />
-            <Route path="settings" element={<h1>Admin Settings</h1>} />
-          </Route>
+
         </Routes>
       </AuthContextProvider>
     </>
@@ -73,3 +65,13 @@ function App() {
 }
 
 export default App;
+
+//          <Route path="admin" element={<Admin />}>
+//            {/* Admin routes */}
+//            <Route path="dashboard" element={<h1>Admin Dashboard</h1>} />
+//            <Route path="classes" element={<h1>Admin Classes</h1>} />
+//            <Route path="blog" element={<h1>Admin Blog</h1>} />
+//            <Route path="schedule" element={<h1>Admin Schedule</h1>} />
+//            <Route path="gallery" element={<h1>Admin Gallery</h1>} />
+//           <Route path="settings" element={<h1>Admin Settings</h1>} />
+//          </Route>

@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import Link from "./Link";
+import Link from "../Payment/Link";
 import PropTypes from "prop-types";
 import styles from "./PaymentYesNo.module.css";
 
