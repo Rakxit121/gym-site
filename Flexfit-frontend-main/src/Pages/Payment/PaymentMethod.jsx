@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 // import axios from 'axios';
+import Footer from "../../components/Footer/Footer";
 import './PaymentMethod.css';
 
 const PaymentMethod = () => {
@@ -138,30 +139,7 @@ const PaymentMethod = () => {
                     <button>Purchase Now</button>
                 </div>
             </section>
-            <footer>
-                <div className="container">
-                    <div className="footer-logo">
-                        <img src="logo.png" alt="FlexFit" />
-                    </div>
-                    <div className="footer-content">
-                        <p>Take your health and body to the next level with our comprehensive program designed to help you reach your fitness goals.</p>
-                        <div className="social-links">
-                            <a href="#"><img src="facebook.png" alt="Facebook" /></a>
-                            <a href="#"><img src="twitter.png" alt="Twitter" /></a>
-                            <a href="#"><img src="pinterest.png" alt="Pinterest" /></a>
-                            <a href="#"><img src="youtube.png" alt="YouTube" /></a>
-                        </div>
-                        <div className="working-hours">
-                            <h3>Our Classes</h3>
-                            <p>Fitness Classes: Monday - Friday: 7:00am - 21:00pm</p>
-                            <p>Aerobics Classes: Saturday: 7:00am - 19:00pm</p>
-                            <p>Power Yoga: Sunday: Closed</p>
-                            <p>Learn Machines</p>
-                            <p>Full-body Strength</p>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 };

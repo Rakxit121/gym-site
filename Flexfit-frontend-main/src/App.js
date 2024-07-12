@@ -5,7 +5,7 @@ import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
 
 import { Route, Routes } from "react-router-dom";
-import InstructorProfile from "./components/Trainers/InstructorProfile";
+import InstructorProfile from "./Pages/Trainer/InstructorProfile";
 import { AuthContextProvider } from "./context/AuthContext";
 import About from "./Pages/About";
 import Blog from "./Pages/Blog";
@@ -13,7 +13,7 @@ import Classes from "./Pages/Classes";
 import Gallery from "./Pages/Gallery/Gallery";
 import GalleryPage1 from "./Pages/Gallery/GalleryPage1";
 import GalleryPage2 from "./Pages/Gallery/GalleryPage2";
-import PaymentMethod from "./components/Payment/PaymentMethod";
+import PaymentMethod from "./Pages/Payment/PaymentMethod";
 import Price from "./Pages/Price";
 import Friday from "./Pages/Schedule/Friday";
 import Monday from "./Pages/Schedule/Monday";

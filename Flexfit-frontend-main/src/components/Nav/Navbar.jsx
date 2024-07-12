@@ -1,14 +1,14 @@
 import { useState } from "react";
-import Logo from "../../images/logo/logo.svg";
-import NavList from "../Nav/NavList";
 import { Link } from "react-router-dom";
 import LogoSide from "../../images/logo/logo-footer.svg";
+import Logo from "../../images/logo/logo.svg";
 import SideImg1 from "../../images/sidebar/1.jpg";
 import SideImg2 from "../../images/sidebar/2.jpg";
 import SideImg3 from "../../images/sidebar/3.jpg";
 import SideImg4 from "../../images/sidebar/4.jpg";
 import SideImg5 from "../../images/sidebar/5.jpg";
 import SideImg6 from "../../images/sidebar/6.jpg";
+import NavList from "../Nav/NavList";
 
 function Navbar() {
   const [spin, setSpin] = useState(false);
@@ -56,7 +56,7 @@ function Navbar() {
   return (
     <>
       <nav
-        className={`flex flex-row bg-transparent items-center justify-between py-8 px-12  fixed top-0 left-0 right-0 w-full z-50 ${
+        className={`flex flex-row bg-black items-center justify-between py-8 px-12  fixed top-0 left-0 right-0 w-full z-50 ${
           sticky ? "shadow-xl !bg-black" : ""
         }`}
       >
