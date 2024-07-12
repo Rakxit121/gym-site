@@ -1,0 +1,241 @@
+.imageIcon {
+  height: 212px;
+  width: 193px;
+  position: absolute;
+  margin: 0 !important;
+  top: -20px;
+  left: -49px;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: contain;
+  z-index: 1;
+}
+.container,
+.frameChild {
+  background-color: var(--color-white);
+}
+.frameChild {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+}
+.container {
+  width: 10px;
+  height: 27px;
+  position: relative;
+  display: none;
+  z-index: 1;
+}
+.confirmYourSubscription {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  line-height: 27px;
+  font-weight: 700;
+  font-family: inherit;
+  z-index: 2;
+}
+.confirmYourSubscriptionWrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 var(--padding-xl);
+}
+.youreAboutTo {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--font-size-2xs);
+  line-height: 22.5px;
+  text-align: center;
+  z-index: 1;
+}
+.membershipDetails {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-xl);
+}
+.membershipPlanPremium,
+.monthlyFeeXxxx {
+  margin-bottom: 0;
+}
+.membershipPlanPremiumMonth {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  padding-left: 15px;
+}
+.membershipPlanPremiumContainer {
+  width: 314px;
+  position: relative;
+  font-size: var(--font-size-2xs);
+  line-height: 22.5px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+.subscriptionInfo {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 13px;
+}
+.areYouSure {
+  position: relative;
+  line-height: 23px;
+  z-index: 1;
+}
+.confirmationQuestion {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 16px;
+  font-size: 12px;
+}
+.confirm {
+  position: relative;
+  font-size: var(--font-size-mini);
+  line-height: 23px;
+  font-weight: 500;
+  font-family: var(--font-montserrat);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+  min-width: 62px;
+}
+.buttonContainer,
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.link {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-3xs) var(--padding-xl);
+  background-color: var(--color-crimson-200);
+  border-radius: var(--br-2xs);
+  justify-content: flex-start;
+  z-index: 1;
+}
+.link:hover {
+  background-color: var(--color-crimson-100);
+}
+.buttonContainer {
+  flex: 1;
+  justify-content: space-between;
+  max-width: 100%;
+  gap: var(--gap-xl);
+}
+.actionButtons,
+.paymentYesNoInner,
+.rectangleParent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.actionButtons {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 44px;
+}
+.paymentYesNoInner,
+.rectangleParent {
+  flex-direction: column;
+}
+.rectangleParent {
+  align-self: stretch;
+  padding: var(--padding-xl) 131px 33px;
+  position: relative;
+  gap: var(--gap-xl);
+}
+.paymentYesNoInner {
+  flex: 1;
+  padding: 39px 0 0;
+  min-width: 449px;
+  text-align: left;
+  font-size: var(--font-size-lg);
+  color: var(--color-black);
+  font-family: var(--font-montserrat);
+}
+.x {
+  text-decoration: none;
+  position: relative;
+  line-height: 23px;
+  font-weight: 500;
+  color: inherit;
+  display: inline-block;
+  min-width: 16px;
+}
+.paymentYesNo {
+  width: 825px;
+  background-color: var(--color-white);
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 18px 29px 57px 67px;
+  box-sizing: border-box;
+  position: relative;
+  gap: 22px;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  font-size: 23px;
+  color: red;
+  font-family: var(--font-montserrat);
+}
+@media screen and (max-width: 700px) {
+  .rectangleParent {
+    padding-left: var(--padding-46xl);
+    padding-right: var(--padding-46xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 650px) {
+  .paymentYesNoInner {
+    min-width: 100%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .buttonContainer {
+    flex-wrap: wrap;
+  }
+  .actionButtons,
+  .rectangleParent {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .rectangleParent {
+    padding-bottom: 21px;
+  }
+  .x {
+    font-size: var(--font-size-lg);
+    line-height: 18px;
+  }
+  .paymentYesNo {
+    padding-left: var(--padding-xl);
+    box-sizing: border-box;
+  }
+}

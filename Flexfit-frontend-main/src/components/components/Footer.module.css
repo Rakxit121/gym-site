@@ -1,0 +1,177 @@
+.workingHours {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  line-height: 33px;
+  font-weight: 700;
+  font-family: inherit;
+}
+.background {
+  width: 70px;
+  height: 4px;
+  position: relative;
+  background-color: var(--color-crimson-300);
+  z-index: 1;
+}
+.workingHoursContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.am2100pm,
+.mondayFriday {
+  align-self: stretch;
+  position: relative;
+  line-height: 24px;
+}
+.am2100pm {
+  font-weight: 500;
+  white-space: nowrap;
+  z-index: 1;
+}
+.scheduleDays {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.am1900pm,
+.saturday {
+  align-self: stretch;
+  position: relative;
+  line-height: 24px;
+}
+.am1900pm {
+  font-weight: 500;
+  white-space: nowrap;
+  z-index: 1;
+}
+.scheduleDays1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.closed,
+.sunday {
+  position: relative;
+  line-height: 24px;
+}
+.sunday {
+  align-self: stretch;
+}
+.closed {
+  font-weight: 500;
+  z-index: 1;
+}
+.closed,
+.scheduleDays2 {
+  align-self: stretch;
+}
+.scheduleContainer,
+.scheduleDays2,
+.workingHoursContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.scheduleContainer {
+  align-self: stretch;
+  gap: var(--gap-xl);
+  font-size: var(--font-size-base);
+  color: var(--color-dimgray-200);
+}
+.workingHoursContainer {
+  flex: 1;
+  gap: var(--gap-base);
+  min-width: 114px;
+  font-size: var(--font-size-3xl);
+  color: var(--color-black);
+}
+.classesContainer,
+.container1 {
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.classesContainer {
+  width: 329px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  min-width: 329px;
+  row-gap: 20px;
+  font-size: var(--font-size-base);
+}
+.container1 {
+  flex: 1;
+  padding: 0 0 var(--padding-lg-3);
+  box-sizing: border-box;
+  gap: var(--gap-290xl-9);
+  min-height: 271.31px;
+}
+.container,
+.container1,
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.container {
+  width: 1240px;
+  justify-content: flex-start;
+  padding: var(--padding-81xl) var(--padding-6xl);
+  box-sizing: border-box;
+  max-width: 1240px;
+}
+.footer {
+  align-self: stretch;
+  background-color: var(--color-white);
+  justify-content: center;
+  max-width: 100%;
+  flex-shrink: 0;
+  z-index: 1;
+  text-align: left;
+  font-size: var(--font-size-mini);
+  color: var(--color-dimgray-200);
+  font-family: var(--font-montserrat);
+}
+@media screen and (max-width: 1250px) {
+  .container {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .classesContainer {
+    flex: 1;
+  }
+  .container1 {
+    flex-wrap: wrap;
+    gap: var(--gap-136xl);
+  }
+}
+@media screen and (max-width: 750px) {
+  .container1 {
+    gap: var(--gap-58xl);
+  }
+  .container {
+    padding-top: var(--padding-46xl);
+    padding-bottom: var(--padding-46xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .workingHours {
+    font-size: var(--font-size-lg);
+    line-height: 26px;
+  }
+  .classesContainer {
+    flex-wrap: wrap;
+  }
+  .container1 {
+    gap: var(--gap-20xl);
+  }
+}
