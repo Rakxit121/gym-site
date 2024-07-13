@@ -23,6 +23,8 @@ import Thursday from "./Pages/Schedule/Thursday";
 import Tuesday from "./Pages/Schedule/Tuesday";
 import Wednesday from "./Pages/Schedule/Wednesday";
 import InstructorProfile from "./Pages/Trainer/InstructorProfile";
+import AdminSettings from "./Pages/Admin/AdminSetting";
+import AdminPage from "./Pages/Admin/AdminPage";
 
 function App() {
   return (
@@ -57,8 +59,8 @@ function App() {
             <Route path="page-2" element={<GalleryPage2 />} />
           </Route>
 
-          <Route path="admin" element={<Admin />}>
-            <Route path="/admin/settings" component={AdminSetting} />
+          <Route path="admin" element={<AdminPage />}>
+            <Route path="/admin/settings" component={<AdminSettings/>} />
           </Route>
 
         </Routes>

@@ -12,12 +12,13 @@ const Sidebar = ({ onLogout }) => {
             </div>
             <nav>
                 <ul>
-                    <li><Link to="/dashboard">Dashboard</Link></li>
-                    <li><Link to="/members">Members</Link></li>
-                    <li><Link to="/trainers">Trainers</Link></li>
-                    <li><Link to="/calendar">Calendar</Link></li>
-                    <li><Link to="/sport-type">SportType</Link></li>
-                    <li><Link to="/payment">Payment</Link></li>
+                    <li><Link to="/admin/dashboard">Dashboard</Link></li>
+                    <li><Link to="/admin/members">Members</Link></li>
+                    <li><Link to="/admin/trainers">Trainers</Link></li>
+                    <li><Link to="/admin/calendar">Calendar</Link></li>
+                    <li><Link to="/admin/sport-type">Sport Type</Link></li>
+                    <li><Link to="/admin/payment">Payment</Link></li>
+                    <li><Link to="/admin/settings">Settings</Link></li>
                 </ul>
             </nav>
             <button onClick={onLogout} className="logout-button">Logout</button>
