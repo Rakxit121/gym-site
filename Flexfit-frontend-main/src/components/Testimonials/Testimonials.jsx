@@ -1,11 +1,6 @@
-import TestimonialImg from "../../images/testimonials/testimonial-new.jpg";
 import TitleBg from "../../images/pricing/titlebg.svg";
+import TestimonialImg from "../../images/testimonials/testimonial-new.jpg";
 import TestimonialBoxes from "./TestimonialBoxes";
-import Logo1 from "../../images/testimonials/logo1.png";
-import Logo2 from "../../images/testimonials/logo2.png";
-import Logo3 from "../../images/testimonials/logo3.png";
-import Logo4 from "../../images/testimonials/logo4.png";
-import Logo5 from "../../images/testimonials/logo5.png";
 
 function Testimonials() {
   return (
@@ -62,42 +57,7 @@ function Testimonials() {
           </div>
         </div>
 
-        {/* brand logos */}
-        <div
-          className="flex gap-5 justify-center mt-32 border-b border-solid border-[#64646438] pb-28 flex-wrap
-        "
-        >
-          <img
-            src={Logo1}
-            alt="logo"
-            className="scale-[.8] hover:invert"
-            style={{ transition: "all 0.3s" }}
-          />
-          <img
-            src={Logo2}
-            alt="logo"
-            className=" scale-[.8] hover:invert"
-            style={{ transition: "all 0.3s" }}
-          />
-          <img
-            src={Logo3}
-            alt="logo"
-            className=" scale-[.8] hover:invert"
-            style={{ transition: "all 0.3s" }}
-          />
-          <img
-            src={Logo4}
-            alt="logo"
-            className=" scale-[.8] hover:invert"
-            style={{ transition: "all 0.3s" }}
-          />
-          <img
-            src={Logo5}
-            alt="logo"
-            className=" scale-[.8] hover:invert"
-            style={{ transition: "all 0.3s" }}
-          />
-        </div>
+
       </section>
     </>
   );

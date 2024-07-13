@@ -1,7 +1,7 @@
 import React from 'react';
-import Sidebar from '../../components/Sidebar/Sidebar';
+import Sidebar from '../../components/Admin/Sidebar';
 
-const Payment = () => {
+const AdminPayment = () => {
     const handleLogout = () => {
         // Implement logout logic here
         console.log('Logout clicked');
@@ -18,4 +18,4 @@ const Payment = () => {
     );
 };
 
-export default Payment;
+export default AdminPayment;

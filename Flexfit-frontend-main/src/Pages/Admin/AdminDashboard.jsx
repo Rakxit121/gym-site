@@ -1,20 +1,22 @@
 import React from 'react';
-import Sidebar from '../../components/Sidebar/Sidebar';
+import Sidebar from '../../components/Admin/Sidebar';
 
-const Trainers = () => {
+const AdminDashboard = () => {
+
     const handleLogout = () => {
         // Implement logout logic here
         console.log('Logout clicked');
     };
+
     return (
         <div style={{ display: 'flex' }}>
             <Sidebar onLogout={handleLogout} />
             <div style={{ marginLeft: '270px', padding: '20px', flexGrow: 1 }}>
-                <h1>Trainers</h1>
-                <p>Manage gym trainers here.</p>
+                <h1>Dashboard</h1>
+                <p>Welcome to the admin dashboard.</p>
             </div>
         </div>
     );
 };
 
-export default Trainers;
+export default AdminDashboard;

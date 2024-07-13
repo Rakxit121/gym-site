@@ -1,7 +1,7 @@
 import React from 'react';
-import Sidebar from '../../components/Sidebar/Sidebar';
+import Sidebar from '../../components/Admin/Sidebar';
 
-const Membership = () => {
+const AdminMembership = () => {
     const handleLogout = () => {
         // Implement logout logic here
         console.log('Logout clicked');
@@ -19,4 +19,4 @@ const Membership = () => {
     );
 };
 
-export default Membership;
+export default AdminMembership;

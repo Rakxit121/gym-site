@@ -7,6 +7,12 @@ import SignUp from "./Pages/SignUp";
 import { Route, Routes } from "react-router-dom";
 import { AuthContextProvider } from "./context/AuthContext";
 import About from "./Pages/About";
+import AdminDashboard from "./Pages/Admin/AdminDashboard";
+import AdminMembership from "./Pages/Admin/AdminMembership";
+import AdminPage from "./Pages/Admin/AdminPage";
+import AdminPayment from "./Pages/Admin/AdminPayment";
+import AdminSettings from "./Pages/Admin/AdminSetting";
+import AdminTrainers from "./Pages/Admin/AdminTrainers";
 import Blog from "./Pages/Blog";
 import Classes from "./Pages/Classes";
 import Gallery from "./Pages/Gallery/Gallery";
@@ -23,8 +29,7 @@ import Thursday from "./Pages/Schedule/Thursday";
 import Tuesday from "./Pages/Schedule/Tuesday";
 import Wednesday from "./Pages/Schedule/Wednesday";
 import InstructorProfile from "./Pages/Trainer/InstructorProfile";
-import AdminSettings from "./Pages/Admin/AdminSetting";
-import AdminPage from "./Pages/Admin/AdminPage";
+
 
 function App() {
   return (
@@ -60,7 +65,11 @@ function App() {
           </Route>
 
           <Route path="admin" element={<AdminPage />}>
-            <Route path="/admin/settings" component={<AdminSettings/>} />
+            <Route path="/admin/settings" component={<AdminSettings />} />
+            <Route path="/admin/dashboard" component={<AdminDashboard />} />
+            <Route path="/admin/trainers" component={<AdminTrainers />} />
+            <Route path="/admin/membership" component={<AdminMembership />} />
+            <Route path="/admin/payment" component={<AdminPayment />} />
           </Route>
 
         </Routes>
@@ -71,12 +80,3 @@ function App() {
 
 export default App;
 
-//          <Route path="admin" element={<Admin />}>
-//            {/* Admin routes */}
-//            <Route path="dashboard" element={<h1>Admin Dashboard</h1>} />
-//            <Route path="classes" element={<h1>Admin Classes</h1>} />
-//            <Route path="blog" element={<h1>Admin Blog</h1>} />
-//            <Route path="schedule" element={<h1>Admin Schedule</h1>} />
-//            <Route path="gallery" element={<h1>Admin Gallery</h1>} />
-//           <Route path="settings" element={<h1>Admin Settings</h1>} />
-//          </Route>

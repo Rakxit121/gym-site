@@ -1,14 +1,7 @@
 import React from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
-import './AdminPage.css'; // Add styling in this CSS file
-import AdminSettings from './AdminSettings';
-// import Calendar from './Calendar';
-import Dashboard from './Dashboard';
-import Members from './Members';
-import Payment from './Payment';
-import Sidebar from './Sidebar';
-// import SportType from './SportType';
-import Trainers from './Trainers';
+import Sidebar from '../../components/Admin/Sidebar.jsx';
+// import './AdminPage.css'; // Add styling in this CSS file
+import TopNav from '../../components/Admin/TopNav.jsx';
 
 const AdminPage = () => {
     const handleLogout = () => {
@@ -17,17 +10,21 @@ const AdminPage = () => {
     };
 
     return (
-        <div className="admin-page">
+        <div className="admin-page" style={{ display: 'flex' }}>
             <Sidebar onLogout={handleLogout} />
-            <div className="admin-content">
-                <Switch>
-                    <Route path="/admin/dashboard" component={Dashboard} />
-                    <Route path="/admin/members" component={Members} />
-                    <Route path="/admin/trainers" component={Trainers} />
-                    <Route path="/admin/payment" component={Payment} />
-                    <Route path="/admin/settings" component={AdminSettings} />
-                    <Redirect from="/admin" to="/admin/dashboard" />
-                </Switch>
+
+            <div className="right-content">
+                
+                <div className="admin-content">
+                    {/* <Routes>
+                        <Route path="/admin" element={<Navigate to="/admin/dashboard" />} />
+                        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+                        <Route path="/admin/members" element={<AdminMembership />} />
+                        <Route path="/admin/trainers" element={<AdminTrainers />} />
+                        <Route path="/admin/payment" element={<AdminPayment />} />
+                        <Route path="/admin/settings" element={<AdminSettings />} />
+                    </Routes> */}
+                </div>
             </div>
         </div>
     );

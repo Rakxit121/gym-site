@@ -16,14 +16,12 @@ function Home() {
     <>
       <Hero />
       <About />
-      <Featured />
-      <ChooseUs />
       <Trainers />
       <Testimonials />
       <Gallery />
       <BmiCalc />
       <Pricing />
-      <Blog />
+
       <CtaBanner />
       <Footer />
     </>

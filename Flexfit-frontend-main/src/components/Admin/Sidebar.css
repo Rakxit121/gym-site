@@ -1,3 +1,7 @@
+.nav{
+    display: none;
+    
+}
 .sidebar {
     width: 250px;
     background-color: #fff;
@@ -48,4 +52,77 @@
     border: none;
     cursor: pointer;
     text-align: center;
+}
+
+
+
+
+
+/* TopNav.css */
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ecf0f1;
+    width: 100%;
+    position: fixed ;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 60px;
+}
+
+.search-container input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    margin-right: 30px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icons .logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+.admin-container {
+    position: relative;
+}
+
+.admin-logo {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.dropdown-menu button {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.dropdown-menu button:hover {
+    background-color: #ecf0f1;
 }
