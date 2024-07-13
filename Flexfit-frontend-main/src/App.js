@@ -5,7 +5,6 @@ import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
 
 import { Route, Routes } from "react-router-dom";
-import InstructorProfile from "./Pages/Trainer/InstructorProfile";
 import { AuthContextProvider } from "./context/AuthContext";
 import About from "./Pages/About";
 import Blog from "./Pages/Blog";
@@ -23,6 +22,7 @@ import Sunday from "./Pages/Schedule/Sunday";
 import Thursday from "./Pages/Schedule/Thursday";
 import Tuesday from "./Pages/Schedule/Tuesday";
 import Wednesday from "./Pages/Schedule/Wednesday";
+import InstructorProfile from "./Pages/Trainer/InstructorProfile";
 
 function App() {
   return (
@@ -57,6 +57,9 @@ function App() {
             <Route path="page-2" element={<GalleryPage2 />} />
           </Route>
 
+          <Route path="admin" element={<Admin />}>
+            <Route path="/admin/settings" component={AdminSetting} />
+          </Route>
 
         </Routes>
       </AuthContextProvider>
