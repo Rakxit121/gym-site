@@ -1,3 +1,4 @@
+import React from "react";
 import MainButton from "../MainButton";
 
 function PricingBox({ img, price }) {
@@ -39,7 +40,7 @@ function PricingBox({ img, price }) {
             text="purchase now"
             arrowColor={`!text-white`}
             cN="pricing-cta"
-            goTo="/contact"
+            goTo="/paymentMethod"
           />
         </div>
       </div>
