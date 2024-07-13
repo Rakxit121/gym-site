@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import './Sidebar.css'; // Add styling in this CSS file
 
 const Sidebar = ({ onLogout }) => {

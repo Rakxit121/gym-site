@@ -7,6 +7,7 @@ const AdminSettings = () => {
     const [newPassword, setNewPassword] = useState('');
     const [confirmNewPassword, setConfirmNewPassword] = useState('');
 
+
     const handleLogout = () => {
         // Implement logout logic here
         console.log('Logout clicked');
