@@ -1,6 +1,9 @@
-import mongoose from "mongoose";
-import { UserFormData } from "../types";
-const UserModel = new mongoose.Schema({
+// userModel.js
+
+const mongoose = require("mongoose");
+const { UserFormData } = require("../types");
+
+const UserSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
@@ -17,4 +20,4 @@ const UserModel = new mongoose.Schema({
     registeredClasses: [String],
 });
 
-export const User = mongoose.model<UserFormData>("User", UserModel);
+module.exports = mongoose.model("User", UserSchema);

@@ -1,6 +1,4 @@
-import { ClassType } from "../types";
-
-export const imgs = [
+const imgs = [
     "https://i.imgur.com/iYM7FP1.jpg",
     "https://i.imgur.com/vvk548x.jpg",
     "https://i.imgur.com/lMJBM3Q.jpg",
@@ -35,7 +33,7 @@ export const imgs = [
     "https://i.imgur.com/GWOQSsE.jpg",
 ];
 
-export const trainers = [
+const trainers = [
     "Emily Johnson",
     "Benjamin Smith",
     "Olivia Davis",
@@ -88,7 +86,7 @@ export const trainers = [
     "Levi Wright",
 ];
 
-export const scheduleArray = [
+const scheduleArray = [
     "Sun 9am-10am",
     "Mon 1pm-2pm",
     "Tue 10am-11am",
@@ -140,7 +138,7 @@ export const scheduleArray = [
     "Sat 2pm-3pm",
 ];
 
-export const dateStrings = [
+const dateStrings = [
     "20/01/2023",
     "12/04/2023",
     "05/07/2023",
@@ -163,7 +161,7 @@ export const dateStrings = [
     "19/07/2023",
 ];
 
-export const gymClassNames = [
+const gymClassNames = [
     "Cardio Blast",
     "Power Sculpt",
     "HIIT Fusion",
@@ -186,7 +184,7 @@ export const gymClassNames = [
     "BoxFit Revolution",
 ];
 
-export const plans = [
+const plans = [
     {
         benefits: [
             "Basic equipment access",
@@ -224,3 +222,12 @@ export const plans = [
         type: "VIP",
     },
 ];
+
+module.exports = {
+    imgs,
+    trainers,
+    scheduleArray,
+    dateStrings,
+    gymClassNames,
+    plans,
+};
