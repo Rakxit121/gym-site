@@ -1,19 +1,20 @@
-import express, { Request, Response } from "express";
-import asyncHandler from "express-async-handler";
-import { GymPlan, errors, plans } from "../../shared";
-//@desc  get plans
+const express = require("express");
+const asyncHandler = require("express-async-handler");
+const { GymPlan, errors, plans } = require("../../shared");
+
+// @desc  get plans
 // @route   GET /plans
 // @access public
-export const getGymPlans = asyncHandler(async (req: Request, res: Response) => {
+const getGymPlans = asyncHandler(async (req, res) => {
     const plans = await GymPlan.find();
 
     res.status(200).json(plans);
 });
 
-//@desc  get plans
+// @desc  get plans
 // @route   POST /plans/create
 // @access public
-export const createPlans = asyncHandler(async (req: Request, res: Response) => {
+const createPlans = asyncHandler(async (req, res) => {
     plans.forEach(async (plan, index) => {
         const newPlan = await GymPlan.create(plan);
 
@@ -25,3 +26,5 @@ export const createPlans = asyncHandler(async (req: Request, res: Response) => {
 
     res.status(200).json(plans);
 });
+
+module.exports = { getGymPlans, createPlans };
