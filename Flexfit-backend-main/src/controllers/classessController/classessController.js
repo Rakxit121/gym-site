@@ -1,19 +1,19 @@
-import express, { Response, Request } from "express";
-import asyncHandler from "express-async-handler";
-import {
+const express = require("express");
+const asyncHandler = require("express-async-handler");
+const {
     Class,
     ClassRequestType,
     errors,
     generateClassData,
-    DEFAULT_PAGE_SIE,
-} from "../../shared";
+    DEFAULT_PAGE_SIZE,
+} = require("../../shared");
 
-//@desc  get classes
+// @desc  get classes
 // @route   GET /classes
 // @access public
-export const getClasses = asyncHandler(async (req: Request, res: Response) => {
+const getClasses = asyncHandler(async (req, res) => {
     const page = Number(req.query.page) || 1;
-    const limit = Number(req.query.pageSize) || DEFAULT_PAGE_SIE;
+    const limit = Number(req.query.pageSize) || DEFAULT_PAGE_SIZE;
     const searchTerm = req.query.searchTerm || "";
     const level = req.query.level || "";
 
@@ -38,12 +38,12 @@ export const getClasses = asyncHandler(async (req: Request, res: Response) => {
     );
 });
 
-//@desc  get class infomation
+// @desc  get class information
 // @route GET classes/:id
 // @access public
-export const getClassInfo = asyncHandler(async (req: Request, res: Response) => {
+const getClassInfo = asyncHandler(async (req, res) => {
     const classId = req.params.id;
-    //TODO: there is no classId
+    // TODO: there is no classId
     if (!classId) {
         res.status(errors.NOT_FOUND);
         throw new Error("Class id is not valid");
@@ -53,16 +53,16 @@ export const getClassInfo = asyncHandler(async (req: Request, res: Response) => 
     const existingClass = await Class.findById(classId);
     if (!existingClass) {
         res.status(errors.NOT_FOUND);
-        throw new Error("Class does not exsit");
+        throw new Error("Class does not exist");
     }
     // TODO: successfully found a class
     res.status(200).json(existingClass);
 });
 
-//@desc  create a new class
+// @desc  create a new class
 // @route POST classes/create
 // @access public
-export const createClass = asyncHandler(async (req: ClassRequestType, res: Response) => {
+const createClass = asyncHandler(async (req, res) => {
     const { name, trainer, level, schedule, startDate, endDate, img } = req.body;
     // TODO: class data is not valid
     // if (!name || !trainer || !level || !schedule || !startDate || !endDate || !img) {
@@ -94,3 +94,5 @@ export const createClass = asyncHandler(async (req: ClassRequestType, res: Respo
     // TODO: Success in creating class
     res.status(200).json(classess);
 });
+
+module.exports = { getClasses, getClassInfo, createClass };
