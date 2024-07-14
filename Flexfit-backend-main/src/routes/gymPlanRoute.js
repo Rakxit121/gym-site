@@ -1,7 +1,9 @@
-import express from "express";
-import { createPlans, getGymPlans } from "../controllers";
+const express = require("express");
+const { createPlans, getGymPlans } = require("../controllers");
 
-export const gymPlanRoute = express.Router();
+const gymPlanRoute = express.Router();
 
 gymPlanRoute.route("/plans").get(getGymPlans);
 gymPlanRoute.route("/plans/create").post(createPlans);
+
+module.exports = { gymPlanRoute };
