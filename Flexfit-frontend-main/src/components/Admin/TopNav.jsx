@@ -18,7 +18,7 @@ const TopNav = ({ onLogout, onThemeChange }) => {
             <div className="icons">
                 <img src={'https://img.icons8.com/?size=100&id=60249&format=png&color=000000'} alt="Nepal Logo" className="logo" />
                 <div className="admin-container" onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
-                    <img src={'https://img.icons8.com/?size=100&id=23441&format=png&color=000000'} alt="Admin Logo" className="admin-logo" />
+                    <img src={'https://img.icons8.com/?size=100&id=7819&format=png&color=000000'} alt="Admin Logo" className="admin-logo" />
                     {dropdownVisible && (
                         <div className="dropdown-menu">
                             <button onClick={onThemeChange}>Theme</button>
