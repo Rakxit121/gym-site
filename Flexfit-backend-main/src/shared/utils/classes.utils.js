@@ -1,9 +1,9 @@
-import { dateStrings, imgs, trainers, gymClassNames, scheduleArray } from "../constants";
-import { ClassType } from "../types";
+const { dateStrings, imgs, trainers, gymClassNames, scheduleArray } = require("../constants");
+const { ClassType } = require("../types");
 
-// Gennerate dummy data for classes
-export const generateClassData = () => {
-    const classes: ClassType[] = [];
+// Generate dummy data for classes
+const generateClassData = () => {
+    const classes = [];
 
     for (let i = 0; i < 30; i++) {
         const name = chooseRandomItem(gymClassNames);
@@ -27,7 +27,11 @@ export const generateClassData = () => {
     return classes;
 };
 
-// Choose a rundom item in an array
-const chooseRandomItem = (items: any[]) => {
+// Choose a random item in an array
+const chooseRandomItem = (items) => {
     return items[Math.floor(Math.random() * items.length)];
+};
+
+module.exports = {
+    generateClassData,
 };
