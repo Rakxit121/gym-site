@@ -1,51 +1,47 @@
-import { Response, Request, NextFunction } from "express";
-import { errors } from "../shared";
+const { errors } = require("../shared");
 
-export const errorHandler = (
-    err: Error,
-    req: Request,
-    res: Response,
-    next: NextFunction
-) => {
+const errorHandler = (err, req, res, next) => {
     const statusCode = res.statusCode || 500;
     switch (statusCode) {
         case errors.VALIDATION_ERROR:
             res.json({
-                titlte: "Validation Failed",
+                title: "Validation Failed",
                 message: err.message,
             });
-
             break;
 
         case errors.NOT_FOUND:
             res.json({
-                titlte: "Not Found",
+                title: "Not Found",
                 message: err.message,
             });
             break;
 
-        case errors.UNAUTHORISED:
+        case errors.UNAUTHORIZED:
             res.json({
-                titlte: "Unauthorised",
+                title: "Unauthorized",
                 message: err.message,
             });
             break;
 
-        case errors.FORBIDEN:
+        case errors.FORBIDDEN:
             res.json({
-                titlte: "Forbiden",
+                title: "Forbidden",
                 message: err.message,
             });
             break;
+
         case errors.SERVER_ERROR:
             res.json({
-                titlte: "Server Error",
+                title: "Server Error",
                 message: err.message,
             });
             break;
-        default:
-            break;
 
+        default:
             next();
+            break;
     }
 };
+
+module.exports = { errorHandler };
