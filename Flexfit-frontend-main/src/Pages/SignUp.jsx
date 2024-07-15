@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import Footer from "../components/Footer/Footer";
 
 function Signup() {
+  const { fname, setFname} = useState("");
+  const { lname, setLname } = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { user, signUp } = UserAuth();
@@ -19,7 +21,7 @@ function Signup() {
     e.preventDefault();
 
     try {
-      await signUp(email, password);
+      await signUp(fname, lname, email, password);
       navigate("/#home");
       goTop();
     } catch (error) {
@@ -40,12 +42,35 @@ function Signup() {
             onSubmit={handleSubmit}
             className="flex flex-col py-40 px-20 bg-black w-[55rem] min450:w-full  shadow-xl"
           >
+
+<label className="text-[2rem] text-white mb-3 font-medium ">
+              First Name
+            </label>
+            <input
+              className="text-[1.7rem] px-8 py-4 mb-10 w-full outline-[#ff0336] "
+              placeholder="John"
+              type="String"
+              onChange={(e) => setFname(e.target.value)}
+            ></input>
+
+
+<label className="text-[2rem] text-white mb-3 font-medium ">
+              Last Name
+            </label>
+            <input
+              className="text-[1.7rem] px-8 py-4 mb-10 w-full outline-[#ff0336] "
+              placeholder="Doe"
+              type="String"
+              onChange={(e) => setLname(e.target.value)}
+            ></input>
+
+
             <label className="text-[2rem] text-white mb-3 font-medium ">
               Email
             </label>
             <input
               className="text-[1.7rem] px-8 py-4 mb-10 w-full outline-[#ff0336] "
-              placeholder="gymate@gymail.com"
+              placeholder="flexfit@gymail.com"
               type="email"
               onChange={(e) => setEmail(e.target.value)}
             ></input>

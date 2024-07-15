@@ -5,13 +5,15 @@
 header {
   background: #000;
   color: #fff;
-  /* padding: 100px 0; */
+  padding: 100px 0;
+
 }
 
 header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 }
 
 
@@ -40,8 +42,10 @@ header .join-class a {
   color: #fff;
   text-align: center;
   padding: 50px 0;
+  height: 220px;
+  margin-top: 0px;
 }
-
+/* 
 .profile-details .container {
   text-align: center;
   padding: 20px;
@@ -90,4 +94,4 @@ header .join-class a {
 .instructor-info ul li {
   font-size: 16px;
   color: #444;
-}
+} */

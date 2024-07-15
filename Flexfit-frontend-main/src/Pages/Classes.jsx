@@ -21,7 +21,7 @@ function Classes() {
       <section className="login-section text-center ">
         <div className="login-banner relative justify-center flex">
           <h1 className="text-white absolute bottom-[25px] text-[3rem] font-bold">
-            Classes
+            Trainers
           </h1>
         </div>
 
@@ -36,24 +36,35 @@ function Classes() {
             title="Cycling"
             trainer="Dorian Yate"
             date="Wed: 9:00 am"
+            experience={"Dorian has over 10 years of experience as a certified personal trainer, specializing in strength training and cardiovascular fitness."}
+            description="Dorian is passionate about fitness and dedicated to helping his clients reach their full potential through personalized training programs."
           />
           <ClassesBox
             bgImg="meditaion-bg"
             title="Meditation"
             trainer="Maria Mich"
             date="Fri: 1:00 pm"
+            experience={"Maria has over 10 years of experience as a certified personal trainer, specializing in strength training and cardiovascular fitness."}
+            description="Maria is passionate about fitness and dedicated to helping his clients reach their full potential through personalized training programs."
+         
           />
           <ClassesBox
             bgImg="mma-bg"
             title="Boxing"
             trainer="John Flex"
             date="Tue: 4:00 pm"
-          />
+            experience={"John has over 10 years of experience as a certified personal trainer, specializing in strength training and cardiovascular fitness."}
+            description="John is passionate about fitness and dedicated to helping his clients reach their full potential through personalized training programs."
+         
+         />
           <ClassesBox
             bgImg="karate-bg"
             title="Karate"
             trainer="David Rich"
             date="Sat: 9:00 am"
+            experience={"David has over 10 years of experience as a certified personal trainer, specializing in strength training and cardiovascular fitness."}
+            description="David is passionate about fitness and dedicated to helping his clients reach their full potential through personalized training programs."
+         
           />
           <ClassesBox
             bgImg="powerlift-bg"
@@ -92,18 +103,27 @@ function Classes() {
             title="Cycling"
             trainer="Dorian Yate"
             date="Wed: 9:00 am"
+            experience={"Dorian has over 10 years of experience as a certified personal trainer, specializing in strength training and cardiovascular fitness."}
+            description="Dorian is passionate about fitness and dedicated to helping his clients reach their full potential through personalized training programs."
+         
           />
           <ClassesBox
             bgImg="meditaion-bg"
             title="Meditation"
             trainer="Maria Mich"
             date="Fri: 1:00 pm"
+            experience={"Maria has over 10 years of experience as a certified personal trainer, specializing in strength training and cardiovascular fitness."}
+            description="Maria is passionate about fitness and dedicated to helping his clients reach their full potential through personalized training programs."
+         
           />
           <ClassesBox
             bgImg="mma-bg"
             title="Boxing"
             trainer="John Flex"
             date="Tue: 4:00 pm"
+            experience={"John has over 10 years of experience as a certified personal trainer, specializing in strength training and cardiovascular fitness."}
+            description="John is passionate about fitness and dedicated to helping his clients reach their full potential through personalized training programs."
+         
           />
           <ClassesBox
             bgImg="karate-bg"

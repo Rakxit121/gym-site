@@ -67,11 +67,11 @@ function App() {
             <Route path="page-1" element={<GalleryPage1 />} />
             <Route path="page-2" element={<GalleryPage2 />} />
           </Route>
-          <Route path="/paymentMethod" element={<PaymentMethod />} />
-          <Route element={<UserRoutes />}>
+          
+          {/* <Route element={<UserRoutes />}> */}
             <Route path="/trainersProfile" element={<InstructorProfile />} />
-
-          </Route>
+            <Route path="/paymentMethod" element={<PaymentMethod />} />
+          {/* </Route> */}
 
           {/* <Route element={<AdminRoutes />}> */}
           <Route path="/admin" element={<Navigate to="/admin/dashboard" />} />
