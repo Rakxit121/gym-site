@@ -1,36 +1,50 @@
 import React, { useState } from 'react';
-import AddEditMemberForm from '../../components/Admin/AddEditMemberForm'; // Import your form component here
+import AddEditUserForm from '../../components/Admin/AddEditUserForm'; // Import your form component here
 import Sidebar from '../../components/Admin/Sidebar';
 
 const AdminMembership = () => {
+    const [users, setUsers] = useState([
+        {
+            id: 1,
+            firstName: 'Salim',
+            lastName: 'Srew',
+            age: 21,
+            phoneNumber: '+212 678-542310',
+            gender: 'male',
+            membership: 'Intermediate'
+        }
+    ]);
     const [showAddEditForm, setShowAddEditForm] = useState(false);
-    const [editFormData, setEditFormData] = useState(null); // State to hold data for editing
+    const [editFormData, setEditFormData] = useState(null);
 
     const handleLogout = () => {
-        // Implement logout logic here
         console.log('Logout clicked');
     };
 
-    const handleNewMember = () => {
-        // Show the add/edit form for new member
+    const handleNewUser = () => {
         setShowAddEditForm(true);
-        setEditFormData(null); // Reset edit data
+        setEditFormData(null);
     };
 
-    const handleEditMember = (data) => {
-        // Show the add/edit form for editing member
+    const handleEditUser = (user) => {
         setShowAddEditForm(true);
-        setEditFormData(data);
+        setEditFormData(user);
     };
 
-    const handleDeleteMember = (data) => {
-        // Implement delete logic here
-        console.log(`Deleting member: ${data.firstName} ${data.lastName}`);
-        // You can implement API calls or state updates to delete the member
+    const handleDeleteUser = (id) => {
+        setUsers(users.filter(user => user.id !== id));
+    };
+
+    const handleSaveUser = (user) => {
+        if (editFormData) {
+            setUsers(users.map(u => (u.id === user.id ? user : u)));
+        } else {
+            setUsers([...users, { ...user, id: users.length + 1 }]);
+        }
+        setShowAddEditForm(false);
     };
 
     return (
-        
         <div style={{ display: 'flex' }}>
             <Sidebar onLogout={handleLogout} />
             <div style={{ marginLeft: '270px', padding: '20px', flexGrow: 1 }}>
@@ -40,36 +54,37 @@ const AdminMembership = () => {
                             <h1>Users</h1>
                             <div className="form-group flex" style={{ justifyContent: 'space-between' }}>
                                 <input type="text" className="form-control" placeholder="Search user..." />
-                                <button className="btn btn-success" onClick={handleNewMember}>+ New Member</button>
+                                <button className="btn btn-success" onClick={handleNewUser}>+ New User</button>
                             </div>
                             <table className="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th scope="col"></th>
+                                        <th scope="col">ID</th>
                                         <th scope="col">First Name</th>
                                         <th scope="col">Last Name</th>
                                         <th scope="col">Age</th>
                                         <th scope="col">Phone Number</th>
                                         <th scope="col">Gender</th>
-                                        <th scope="col">Status</th>
+                                        <th scope="col">Membership</th>
                                         <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {/* Example data for demonstration */}
-                                    <tr>
-                                        <td><input type="checkbox" /></td>
-                                        <td>Salim</td>
-                                        <td>Srew</td>
-                                        <td>21</td>
-                                        <td>+212 678-542310</td>
-                                        <td>male</td>
-                                        <td>Boxer</td>
-                                        <td>
-                                            <button className="btn btn-link" onClick={() => handleEditMember({ firstName: 'Salim', lastName: 'Srew', CIN: 'J098765', birthday: '28 June 2000', phoneNumber: '+212 678-542310', gender: 'male', status: 'Member' })}>edit</button>
-                                            <button className="btn btn-link" onClick={() => handleDeleteMember({ firstName: 'Salim', lastName: 'Srew', CIN: 'J098765', birthday: '28 June 2000', phoneNumber: '+212 678-542310', gender: 'male', status: 'Member' })}>delete</button>
-                                        </td>
-                                    </tr>
+                                    {users.map(user => (
+                                        <tr key={user.id}>
+                                            <td>{user.id}</td>
+                                            <td>{user.firstName}</td>
+                                            <td>{user.lastName}</td>
+                                            <td>{user.age}</td>
+                                            <td>{user.phoneNumber}</td>
+                                            <td>{user.gender}</td>
+                                            <td>{user.membership}</td>
+                                            <td>
+                                                <button className="btn btn-link" onClick={() => handleEditUser(user)}>edit</button>
+                                                <button className="btn btn-link" onClick={() => handleDeleteUser(user.id)}>delete</button>
+                                            </td>
+                                        </tr>
+                                    ))}
                                 </tbody>
                             </table>
                         </div>
@@ -77,8 +92,9 @@ const AdminMembership = () => {
                 </div>
             </div>
             {showAddEditForm && (
-                <AddEditMemberForm
+                <AddEditUserForm
                     formData={editFormData}
+                    onSave={handleSaveUser}
                     onClose={() => setShowAddEditForm(false)}
                 />
             )}
