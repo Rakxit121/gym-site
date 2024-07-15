@@ -1,6 +1,15 @@
 import Footer from "../components/Footer/Footer";
 
 function Login() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // You can handle form submission logic here
+    // For demonstration, we'll just log the form data
+    const formData = new FormData(e.target);
+    const formDataObj = Object.fromEntries(formData.entries());
+    console.log("Form Data:", formDataObj);
+    // You may want to send the form data to a server or perform other actions
+  };
   return (
     <>
       <section>
@@ -66,7 +75,7 @@ function Login() {
           </div>
 
           {/* second col ---*/}
-          <form className="flex flex-col pt-[30px] pr-[50px] pb-[50px] pl-[45px] bg-[#f8f8f8] relative md1000:w-[65%] md1000:flex md1000:flex-col md1000:mx-auto md1000:mt-14 min800:w-[90%] min620:w-full">
+          <form className="flex flex-col pt-[30px] pr-[50px] pb-[50px] pl-[45px] bg-[#f8f8f8] relative md1000:w-[65%] md1000:flex md1000:flex-col md1000:mx-auto md1000:mt-14 min800:w-[90%] min620:w-full" onSubmit={handleSubmit()}>
             <h3 className="text-[28px] font-bold mb-14">Leave Us Your Info</h3>
             <span className="bg-[#ff0336] w-[50px] h-[4px] absolute top-[77px]"></span>
             <input

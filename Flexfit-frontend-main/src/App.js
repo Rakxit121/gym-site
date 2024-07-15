@@ -4,7 +4,9 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
 
-import { Route, Routes } from "react-router-dom";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Navigate, Route, Routes } from "react-router-dom";
 import { AuthContextProvider } from "./context/AuthContext";
 import About from "./Pages/About";
 import AdminDashboard from "./Pages/Admin/AdminDashboard";
@@ -20,6 +22,7 @@ import GalleryPage1 from "./Pages/Gallery/GalleryPage1";
 import GalleryPage2 from "./Pages/Gallery/GalleryPage2";
 import PaymentMethod from "./Pages/Payment/PaymentMethod";
 import Price from "./Pages/Price";
+import UserRoutes from "./Pages/protected/UserRoutes";
 import Friday from "./Pages/Schedule/Friday";
 import Monday from "./Pages/Schedule/Monday";
 import Saturday from "./Pages/Schedule/Saturday";
@@ -31,7 +34,9 @@ import Wednesday from "./Pages/Schedule/Wednesday";
 import InstructorProfile from "./Pages/Trainer/InstructorProfile";
 
 
+
 function App() {
+  const user = JSON.parse(localStorage.getItem("user"));
   return (
     <>
       <AuthContextProvider>
@@ -46,8 +51,7 @@ function App() {
           <Route path="blog" element={<Blog />} />
           <Route path="about" element={<About />} />
 
-          <Route path="/trainersProfile" element={<InstructorProfile />} />
-          <Route path="/paymentMethod" element={<PaymentMethod />} />
+
 
           <Route path="schedule" element={<Schedule />}>
             <Route path="monday" element={<Monday />} />
@@ -63,14 +67,23 @@ function App() {
             <Route path="page-1" element={<GalleryPage1 />} />
             <Route path="page-2" element={<GalleryPage2 />} />
           </Route>
+          <Route path="/paymentMethod" element={<PaymentMethod />} />
+          <Route element={<UserRoutes />}>
+            <Route path="/trainersProfile" element={<InstructorProfile />} />
 
-          <Route path="admin" element={<AdminPage />}>
-            <Route path="/admin/settings" component={<AdminSettings />} />
-            <Route path="/admin/dashboard" component={<AdminDashboard />} />
-            <Route path="/admin/trainers" component={<AdminTrainers />} />
-            <Route path="/admin/membership" component={<AdminMembership />} />
-            <Route path="/admin/payment" component={<AdminPayment />} />
           </Route>
+
+          {/* <Route element={<AdminRoutes />}> */}
+          <Route path="/admin" element={<Navigate to="/admin/dashboard" />} />
+          <Route path="/admin/settings" element={<AdminSettings />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/trainers" element={<AdminTrainers />} />
+          <Route path="/admin/membership" element={<AdminMembership />} />
+          <Route path="/admin/payment" element={<AdminPayment />} />
+          {/* </Route> */}
+
+          <Route path="/admin" component={<AdminPage />} />
+
 
         </Routes>
       </AuthContextProvider>

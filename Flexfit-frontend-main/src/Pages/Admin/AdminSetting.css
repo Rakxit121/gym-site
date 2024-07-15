@@ -39,3 +39,57 @@
     cursor: pointer;
     border-radius: 5px;
 }
+
+.admin-settings {
+    display: flex;
+    min-height: 100vh;
+    /* Set minimum height for full viewport */
+}
+
+.navbar {
+    flex-grow: 1;
+    /* Make navbar fill available space */
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    /* Add some space below icons */
+}
+
+.header-icons button {
+    margin-left: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #333;
+    /* Set text color */
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.search-icon {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    /* Add border to search icon */
+    border-radius: 5px;
+}
+.side_link{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}

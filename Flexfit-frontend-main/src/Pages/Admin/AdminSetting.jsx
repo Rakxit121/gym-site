@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from '../../components/Admin/Sidebar';
 import './AdminSetting.css'; // Add styling in this CSS file
-import TopNav from '../../components/Admin/TopNav';
 
 const AdminSettings = () => {
     const [password, setPassword] = useState('');
@@ -27,7 +26,7 @@ const AdminSettings = () => {
         <div className="admin-settings">
             <Sidebar onLogout={handleLogout} />
             <div className="right-content">
-                <TopNav onLogout={handleLogout} />
+
                 <div className="settings-content">
                 <h1>Settings</h1>
                 <h2>Update Password</h2>

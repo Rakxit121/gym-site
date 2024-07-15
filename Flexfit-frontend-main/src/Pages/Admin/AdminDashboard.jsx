@@ -14,8 +14,12 @@ const AdminDashboard = () => {
             <div style={{ marginLeft: '270px', padding: '20px', flexGrow: 1 }}>
                 <h1>Dashboard</h1>
                 <p>Welcome to the admin dashboard.</p>
+
+                
             </div>
+
         </div>
+        
     );
 };
 

@@ -278,9 +278,9 @@ function Navbar() {
           <div className="border-[rgb(255,255,255,0.3)] border-solid border-2  p-2 rounded-md min620:hidden">
             <Link
               onClick={goTop}
-              to={"/contact"}
-              onMouseEnter={joinSpin}
-              onMouseLeave={stopSpin}
+              to={"/pricing"}
+                onMouseEnter={joinSpin}
+                onMouseLeave={stopSpin}
               className="flex items-center "
             >
               <i
@@ -289,7 +289,7 @@ function Navbar() {
                 }`}
               ></i>
               <h3 className="text-white text-[14px] font-bold uppercase ml-4 mr-8 tracking-wider">
-                join class now
+                join now
               </h3>
             </Link>
           </div>

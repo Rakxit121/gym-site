@@ -3,10 +3,10 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAui9fjs71w8y8MQX-w0qYtxGyaOGQquBs",
-  authDomain: "gymate-gym.firebaseapp.com",
-  projectId: "gymate-gym",
-  storageBucket: "gymate-gym.appspot.com",
+  apiKey: "AIzaSyBC5gkGCHCdEByNXMM85yTkcv7Vi6H2B-A",
+  authDomain: "localhost",
+  projectId: "flexfit-63c0c",
+  storageBucket: "gs://flexfit-63c0c.appspot.com",
   messagingSenderId: "1086911363831",
   appId: "1:1086911363831:web:8dac101ceb861e5c71b1f2",
 };

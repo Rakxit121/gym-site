@@ -1,77 +1,20 @@
-.nav{
-    display: none;
-    
-}
-.sidebar {
-    width: 250px;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-.sidebar .profile {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.sidebar .profile img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-}
-
-.sidebar .profile p {
-    margin: 10px 0;
-}
-
-.sidebar nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar nav ul li {
-    margin: 10px 0;
-}
-
-.sidebar nav ul li a {
-    text-decoration: none;
-    color: #333;
-}
-
-.logout-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 20px;
-    background-color: #ff4b5c;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-}
-
-
-
-
-
 /* TopNav.css */
 .topnav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #ecf0f1;
-    width: 100%;
-    position: fixed ;
+    background-color: #ffffff;
+    width: 82%;
+    height: 18%;
+    position: fixed;
     top: 0;
-    left: 0;
+    left: 18%;
     z-index: 1000;
-    height: 60px;
+    box-shadow: 2 0 10px rgba(0, 0, 0, 0.1);
+    border: 3px;
 }
+
 
 .search-container input {
     width: 300px;
@@ -125,4 +68,72 @@
 
 .dropdown-menu button:hover {
     background-color: #ecf0f1;
+}
+
+
+
+
+
+
+.sidebar {
+    width: 18%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.ff_logo {
+    margin-bottom: auto;
+    align-self: center;
+}
+
+.sidebar .profile {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar .profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: #333;
+}
+
+.sidebar .profile p {
+    margin: 10px 0;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 10px 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.logout-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #ff4b5c;
+    color: #f56a6a;
+    border: none;
+    cursor: pointer;
+    text-align: center;
 }

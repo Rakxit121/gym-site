@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Footer from "../../components/Footer/Footer";
+import EPayment from '../../components/PaymentOptions/epayment';
 import './PaymentMethod.css';
 import Popup from './Popup.css';
 
@@ -48,7 +49,7 @@ const PaymentMethod = () => {
                                         onChange={(e) => setPaymentMethod(e.target.value)}
                                     />
                                     <label htmlFor="esewa">
-                                        <img src="esewa.png" alt="Esewa" />
+                                        <img src="https://i.imgur.com/7kQEsHU.png" alt="Esewa" />
                                     </label>
                                 </div>
                                 <div className="option">
@@ -60,7 +61,12 @@ const PaymentMethod = () => {
                                         onChange={(e) => setPaymentMethod(e.target.value)}
                                     />
                                     <label htmlFor="visa">
-                                        <img src="visa.png" alt="Visa" />
+                                    <div className="icons">
+                                            <img src="https://i.imgur.com/2ISgYja.png" width="30" alt="Credit card" />
+                                            <img src="https://i.imgur.com/W1vtnOV.png" width="30" alt="Credit card" />
+                                            <img src="https://i.imgur.com/35tC99g.png" width="30" alt="Credit card" />
+                                            <img src="https://i.imgur.com/2ISgYja.png" width="30" alt="Credit card" />
+                                        </div>
                                     </label>
                                     <div className="card-details">
                                         <input type="text" placeholder="Card Number" />
@@ -123,6 +129,11 @@ const PaymentMethod = () => {
                     </div>
                 </div>
             </section>
+
+
+            <br /><br />
+            
+            <EPayment/>
 
             <Footer />
             {showPopup && <Popup setShowPopup={setShowPopup} />}
