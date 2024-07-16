@@ -1,6 +1,6 @@
 import Footer from "../components/Footer/Footer";
 
-function Login() {
+function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // You can handle form submission logic here
@@ -128,4 +128,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Contact;

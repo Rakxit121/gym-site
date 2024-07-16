@@ -1,9 +1,10 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import Shape from "../../images/trainers/shape.png";
+import TrainerBg from "../../images/trainers/trainer-bg.png";
 import Trainer1 from "../../images/trainers/trainer1.png";
 import Trainer2 from "../../images/trainers/trainer2.png";
 import Trainer3 from "../../images/trainers/trainer3.png";
-import TrainerBg from "../../images/trainers/trainer-bg.png";
-import Shape from "../../images/trainers/shape.png";
-import { useState } from "react";
 
 function TrainerBox() {
   const [imgHover, setImgHover] = useState(false);
@@ -36,6 +37,7 @@ function TrainerBox() {
             className="relative cursor-pointer w-[35rem] min450:w-full flex flex-col select-none"
           >
             {/* trainer img */}
+            <Link to="/classes">
             <img
               src={train.img}
               alt="trainer"
@@ -44,6 +46,7 @@ function TrainerBox() {
                 imgHover ? "hover:grayscale-0" : ""
               }`}
             />
+            </Link>
             {/* trainer bg */}
             <img
               style={{ transition: "all 0.3s" }}
@@ -52,6 +55,7 @@ function TrainerBox() {
               className={`absolute top-[4px] w-full scale-[1] `}
             />
             {/* trainer description */}
+            <Link to="/classes">
             <div className="box-desc bg-white w-full text-center shadow-lg z-20 rounded-[6px] px-[20px] py-[30px] absolute -bottom-[31px]">
               <img
                 alt="shape"
@@ -70,6 +74,7 @@ function TrainerBox() {
                 <i className="fa-regular fa-envelope"></i>
               </div>
             </div>
+            </Link>
           </div>
         ))}
       </div>

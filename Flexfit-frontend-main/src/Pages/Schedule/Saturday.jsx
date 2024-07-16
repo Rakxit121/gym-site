@@ -1,158 +1,101 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Saturday() {
+  const [modalContent, setModalContent] = useState(null);
+
+  const openModal = (content) => {
+    setModalContent(content);
+  };
+
+  const closeModal = () => {
+    setModalContent(null);
+  };
+
+  const classes = [
+    {
+      name: "Power Lifting",
+      time: "9:00am - 10:00am",
+      trainer: "David Laid",
+    },
+    {
+      name: "Boxing",
+      time: "10:00pm - 11:00pm",
+      trainer: "Tyson Fury",
+    },
+    {
+      name: "Yoga",
+      time: "4:00pm - 5:00pm",
+      trainer: "Milica Tails",
+    },
+  ];
+
   return (
     <>
-      {/* fiter buttons */}
+      {/* Filter buttons */}
       <div className="flex flex-wrap gap-4 justify-center">
-        <Link
-          to="/schedule/monday"
-          className="text-[15px] font-bold border-solid border border-[#d7d7d7] py-[9px] px-[32px] rounded-[23px] hover:bg-[#ff0336] ease-in duration-200 hover:shadow-2xl hover:text-white "
-        >
-          Monday
-        </Link>
-
-        <Link
-          to="/schedule/tuesday"
-          className="text-[15px] font-bold border-solid border border-[#d7d7d7] py-[9px] px-[32px] rounded-[23px] hover:bg-[#ff0336] ease-in duration-200 hover:shadow-2xl hover:text-white "
-        >
-          Tuesday
-        </Link>
-
-        <Link
-          to="/schedule/wednesday"
-          className="text-[15px] font-bold border-solid border border-[#d7d7d7] py-[9px] px-[32px] rounded-[23px] hover:bg-[#ff0336] ease-in duration-200 hover:shadow-2xl hover:text-white "
-        >
-          Wednesday
-        </Link>
-
-        <Link
-          to="/schedule/thursday"
-          className="text-[15px] font-bold border-solid border border-[#d7d7d7] py-[9px] px-[32px] rounded-[23px] hover:bg-[#ff0336] ease-in duration-200 hover:shadow-2xl hover:text-white "
-        >
-          Thursday
-        </Link>
-
-        <Link
-          to="/schedule/friday"
-          className="text-[15px] font-bold border-solid border border-[#d7d7d7] py-[9px] px-[32px] rounded-[23px] hover:bg-[#ff0336] ease-in duration-200 hover:shadow-2xl hover:text-white "
-        >
-          Friday
-        </Link>
-
-        <Link
-          to="/schedule/saturday"
-          className="text-[15px] font-bold border-solid border border-[#d7d7d7] py-[9px] px-[32px] rounded-[23px] bg-[#ff0336] ease-in duration-200 hover:shadow-2xl text-white "
-        >
-          Saturday
-        </Link>
-
-        <Link
-          to="/schedule/sunday"
-          className="text-[15px] font-bold border-solid border border-[#d7d7d7] py-[9px] px-[32px] rounded-[23px] hover:bg-[#ff0336] ease-in duration-200 hover:shadow-2xl hover:text-white "
-        >
-          Sunday
-        </Link>
+        {["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"].map((day) => (
+          <Link
+            key={day}
+            to={`/schedule/${day}`}
+            className={`text-[15px] font-bold border-solid border border-[#d7d7d7] py-[9px] px-[32px] rounded-[23px] ${
+              day === "saturday" ? "bg-[#ff0336] text-white" : "hover:bg-[#ff0336] hover:text-white"
+            } ease-in duration-200 hover:shadow-2xl`}
+          >
+            {day.charAt(0).toUpperCase() + day.slice(1)}
+          </Link>
+        ))}
       </div>
 
-      {/* ---- */}
+      {/* Class boxes */}
+      <div className="mt-8 space-y-6">
+        {classes.map((classInfo, index) => (
+          <div key={index} className="bg-gray-100 p-4 rounded-lg border border-gray-200">
+            <div className="flex justify-between items-center mb-4">
+              <div className="flex-1">
+                <p className="text-lg font-bold">{classInfo.name}</p>
+                <p className="text-sm text-gray-600">{classInfo.time}</p>
+                <p className="text-sm text-gray-600">Trainer: {classInfo.trainer}</p>
+              </div>
+              <button
+                onClick={() => openModal(classInfo)}
+                className="text-white text-sm font-medium bg-gray-800 py-2 px-4 rounded hover:bg-[#ff0336] transition duration-200"
+              >
+                See Details
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
 
-      {/* boxes */}
-      <div className="mt-[5rem]">
-        {/* monday */}
-        <div className="flex flex-col gap-3">
-          {/* row */}
-          <ul className="flex justify-between w-full min800:flex-col min800:text-center">
-            {/* class name */}
-            <li className="py-[25px] px-[55px] bg-[#f2f2f2] w-full">
-              <p className="text-[14px] font-medium text-[#a0a0a0]">
-                Class Name
+      {/* Modal */}
+      {modalContent && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white p-8 rounded-lg shadow-lg w-11/12 max-w-lg">
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-black text-xl"
+            >
+              &times;
+            </button>
+            <div className="border p-4 rounded-lg">
+              <h2 className="text-2xl font-bold mb-4">{modalContent.name}</h2>
+              <p className="mb-2">
+                <strong>Time:</strong> {modalContent.time}
               </p>
-              <p className="text-[18px] text-black font-bold mt-3">
-                Power Lifting
+              <p className="mb-4">
+                <strong>Trainer:</strong> {modalContent.trainer}
               </p>
-            </li>
-            {/* time */}
-            <li className="p-[25px] bg-[#f2f2f2] w-full text-center">
-              <p className="text-[14px] font-medium text-[#a0a0a0]">Time</p>
-              <p className="text-[18px] text-black font-bold mt-3">
-                9:00am - 10:00am
-              </p>
-            </li>
-            {/* trainer */}
-            <li className="p-[25px] bg-[#f2f2f2] w-full text-center">
-              <p className="text-[14px] font-medium text-[#a0a0a0]">Trainer</p>
-              <p className="text-[18px] text-black font-bold mt-3">
-                David Laid
-              </p>
-            </li>
-            <li className="py-[25px] px-[55px] bg-[#f2f2f2] w-full text-right min800:text-center">
-              <button className="text-white text-[15px] font-medium bg-[#555] py-[10px] px-[20px] rounded-[30px] mt-3 hover:bg-[#ff0336] ease-in duration-200 ">
-                Join Now
+              <button
+                onClick={closeModal}
+                className="text-white text-sm font-medium bg-gray-800 py-2 px-4 rounded hover:bg-[#ff0336] transition duration-200"
+              >
+                Close
               </button>
-            </li>
-          </ul>
-          {/* row */}
-          <ul className="flex justify-between w-full min800:flex-col min800:text-center">
-            {/* class name */}
-            <li className="py-[25px] px-[55px] bg-[#f2f2f2] w-full">
-              <p className="text-[14px] font-medium text-[#a0a0a0]">
-                Class Name
-              </p>
-              <p className="text-[18px] text-black font-bold mt-3">Boxing</p>
-            </li>
-            {/* time */}
-            <li className="p-[25px] bg-[#f2f2f2] w-full text-center">
-              <p className="text-[14px] font-medium text-[#a0a0a0]">Time</p>
-              <p className="text-[18px] text-black font-bold mt-3">
-                10:00pm - 11:00pm
-              </p>
-            </li>
-            {/* trainer */}
-            <li className="p-[25px] bg-[#f2f2f2] w-full text-center">
-              <p className="text-[14px] font-medium text-[#a0a0a0]">Trainer</p>
-              <p className="text-[18px] text-black font-bold mt-3">
-                Tyson Fury
-              </p>
-            </li>
-            <li className="py-[25px] px-[55px] bg-[#f2f2f2] w-full text-right min800:text-center">
-              <button className="text-white text-[15px] font-medium bg-[#555] py-[10px] px-[20px] rounded-[30px] mt-3 hover:bg-[#ff0336] ease-in duration-200 ">
-                Join Now
-              </button>
-            </li>
-          </ul>
-          {/* row */}
-          <ul className="flex justify-between w-full min800:flex-col min800:text-center">
-            {/* class name */}
-            <li className="py-[25px] px-[55px] bg-[#f2f2f2] w-full">
-              <p className="text-[14px] font-medium text-[#a0a0a0]">
-                Class Name
-              </p>
-              <p className="text-[18px] text-black font-bold mt-3">Yoga</p>
-            </li>
-            {/* time */}
-            <li className="p-[25px] bg-[#f2f2f2] w-full text-center">
-              <p className="text-[14px] font-medium text-[#a0a0a0]">Time</p>
-              <p className="text-[18px] text-black font-bold mt-3">
-                4:00pm - 5:00pm
-              </p>
-            </li>
-            {/* trainer */}
-            <li className="p-[25px] bg-[#f2f2f2] w-full text-center">
-              <p className="text-[14px] font-medium text-[#a0a0a0]">Trainer</p>
-              <p className="text-[18px] text-black font-bold mt-3">
-                Milica Tails
-              </p>
-            </li>
-            <li className="py-[25px] px-[55px] bg-[#f2f2f2] w-full text-right min800:text-center">
-              <button className="text-white text-[15px] font-medium bg-[#555] py-[10px] px-[20px] rounded-[30px] mt-3 hover:bg-[#ff0336] ease-in duration-200 ">
-                Join Now
-              </button>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }

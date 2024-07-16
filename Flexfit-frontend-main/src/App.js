@@ -1,5 +1,4 @@
 import Navbar from "./components/Nav/Navbar";
-import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
@@ -17,12 +16,12 @@ import AdminSettings from "./Pages/Admin/AdminSetting";
 import AdminTrainers from "./Pages/Admin/AdminTrainers";
 import Blog from "./Pages/Blog";
 import Classes from "./Pages/Classes";
+import ContactMain from "./Pages/ContactMain";
 import Gallery from "./Pages/Gallery/Gallery";
 import GalleryPage1 from "./Pages/Gallery/GalleryPage1";
 import GalleryPage2 from "./Pages/Gallery/GalleryPage2";
 import PaymentMethod from "./Pages/Payment/PaymentMethod";
 import Price from "./Pages/Price";
-import UserRoutes from "./Pages/protected/UserRoutes";
 import Friday from "./Pages/Schedule/Friday";
 import Monday from "./Pages/Schedule/Monday";
 import Saturday from "./Pages/Schedule/Saturday";
@@ -32,6 +31,7 @@ import Thursday from "./Pages/Schedule/Thursday";
 import Tuesday from "./Pages/Schedule/Tuesday";
 import Wednesday from "./Pages/Schedule/Wednesday";
 import InstructorProfile from "./Pages/Trainer/InstructorProfile";
+import PaymentConfirmation from "./Pages/Payment/PaymentConfirmation";
 
 
 
@@ -43,7 +43,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="contact" element={<Contact />} />
+          <Route path="contact" element={<ContactMain />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<SignUp />} />
           <Route path="classes" element={<Classes />} />
@@ -67,14 +67,16 @@ function App() {
             <Route path="page-1" element={<GalleryPage1 />} />
             <Route path="page-2" element={<GalleryPage2 />} />
           </Route>
-          
+
           {/* <Route element={<UserRoutes />}> */}
-            <Route path="/trainersProfile" element={<InstructorProfile />} />
-            <Route path="/paymentMethod" element={<PaymentMethod />} />
+          <Route path="/trainersProfile" element={<InstructorProfile />} />
+          <Route path="/paymentMethod" element={<PaymentMethod />} />
+          <Route path="/payment-success" element={<PaymentConfirmation />} />
+
           {/* </Route> */}
 
           {/* <Route element={<AdminRoutes />}> */}
-          <Route path="/admin" element={<Navigate to="/admin/dashboard" />} />
+          <Route path="/admin" element={<Navigate to="/admin/settings" />} />
           <Route path="/admin/settings" element={<AdminSettings />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/trainers" element={<AdminTrainers />} />

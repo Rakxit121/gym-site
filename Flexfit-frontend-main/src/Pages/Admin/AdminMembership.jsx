@@ -11,7 +11,18 @@ const AdminMembership = () => {
             age: 21,
             phoneNumber: '+212 678-542310',
             gender: 'male',
-            membership: 'Intermediate'
+            membership: 'Intermediate',
+            status: 'User'
+        },
+        {
+            id: 1,
+            firstName: 'Admin',
+            lastName: 'main',
+            age: 21,
+            phoneNumber: '988277727',
+            gender: 'male',
+            membership: 'Advanced',
+            status: 'Admin'
         }
     ]);
     const [showAddEditForm, setShowAddEditForm] = useState(false);
@@ -66,6 +77,7 @@ const AdminMembership = () => {
                                         <th scope="col">Phone Number</th>
                                         <th scope="col">Gender</th>
                                         <th scope="col">Membership</th>
+                                        <th scope="col">Status</th>
                                         <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
@@ -79,6 +91,7 @@ const AdminMembership = () => {
                                             <td>{user.phoneNumber}</td>
                                             <td>{user.gender}</td>
                                             <td>{user.membership}</td>
+                                             <td>{user.status}</td>
                                             <td>
                                                 <button className="btn btn-link" onClick={() => handleEditUser(user)}>edit</button>
                                                 <button className="btn btn-link" onClick={() => handleDeleteUser(user.id)}>delete</button>

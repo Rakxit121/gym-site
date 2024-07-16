@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import TitleBg from "../../images/pricing/titlebg.svg";
 import MainButton from "../MainButton";
 
@@ -26,13 +27,14 @@ function Hero() {
               make your body <br />
               <span className="font-thin">fit & perfect</span>
             </h1>
-
+            <Link to="/about">
             <MainButton
               color={`text-black`}
               bg={`bg-white`}
-              text="our classes"
+              text="About Us"
               goTo="/classes"
             />
+            </Link>
           </div>
         </div>
         {/* socials */}

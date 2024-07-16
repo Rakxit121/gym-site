@@ -34,12 +34,12 @@ const Sidebar = ({ onLogout }) => {
                 <nav>
                     <ul>
                         <li>
-                            <Link to="/admin/dashboard">
+                            {/* <Link to="/admin/dashboard">
                                 <p className='side_link' style={{ color: "black", display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
                                     <img width="38" height="38" src="https://img.icons8.com/deco/48/dashboard.png" alt="dashboard" />
                                     Dashboard
                                 </p>
-                            </Link>
+                            </Link> */}
                         </li>
                         <li>
                             <Link to="/admin/membership">
@@ -75,7 +75,9 @@ const Sidebar = ({ onLogout }) => {
                         </li>
                     </ul>
                 </nav>
-                <button onClick={onLogout} className="logout-button">Logout</button>
+                <Link to={'/signup'}>
+                <button onClick={onLogout} className="logout-button bold" style={{color:'white'}}>Logout</button>
+                </Link>
             </div>
 
             <div className="topnav flex fixed min450:w-full overflow-x-hidden">
